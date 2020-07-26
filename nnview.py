@@ -17,7 +17,6 @@ References:
 © 2020 foota
 """
 
-import sys
 import subprocess
 import argparse
 import time
@@ -116,7 +115,7 @@ def run(model, infile, outfile):
     proc_out.wait()
 
 
-def main(args):
+def main():
     global DEVICE, ALPHA, NROWS, NCOLS
     start_time = time.time()
     args = parser.parse_args()
@@ -144,4 +143,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    main()
