@@ -58,7 +58,9 @@ parser.add_argument(
 def process_frame(model, frame):
     im0 = Image.fromarray(frame)
     h, w, _ = frame.shape  # (H, W, C)
-    frame = torch.tensor(frame, dtype=torch.float32, device=DEVICE)  # host -> device
+    frame = torch.tensor(
+        frame / 255.0, dtype=torch.float32, device=DEVICE
+    )  # host -> device
     frame = torch.transpose(frame, 1, 2)  # (H, C, W)
     frame = torch.transpose(frame, 0, 1)  # (C, H, W)
     frame = torch.unsqueeze(frame, 0)  # (1, C, H, W)
