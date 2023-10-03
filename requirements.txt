@@ -3,4 +3,4 @@ torch==1.5.1
 torchvision==0.6.1
 ffmpeg==1.4
 ffmpeg_python==0.2.0
-Pillow==7.2.0
+Pillow==10.0.1
